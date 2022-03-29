@@ -87,7 +87,7 @@ function App() {
       <Row>
       <header className="App-header">
       <Row>
-        <h1 font-weight="bold" >React AWS Storage Demo</h1>
+        <h1 font-weight="bold" >Welcome to the react AWS Storage Demo!</h1>
       </Row>
       <br />
       <br />
