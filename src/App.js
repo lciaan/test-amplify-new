@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import Amplify, {Auth, Storage} from 'aws-amplify';
+import '@aws-amplify/ui-react/styles.css';
 import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
 import {Button, Container, Table, Row} from 'react-bootstrap';
+import { Authenticator } from '@aws-amplify/ui-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -83,6 +85,8 @@ function App() {
 
   return (
     //<div className="App">
+    <Authenticator>
+       {({ signOut, user }) => (
     <Container>
       <Row>
       <header className="App-header">
@@ -118,21 +122,25 @@ function App() {
           </tbody>
         </Table>
         <Button variant="info" onClick={() => handleClear()}>Clear</Button>
+        <br />
+        <Button variant="danger" onClick={signOut}>Sign out</Button>
         <img src={image} width="600"/>
       </header>
       </Row>
       </Container>
+       )}
+      </Authenticator>
     //</div>
   );
 }
 
-// const styles = {
-//   container: { width: 800, margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 20},
-//   todo: {  marginBottom: 15 },
-//   input: { border: 'none', backgroundColor: '#ddd', marginBottom: 10, padding: 8, fontSize: 18 },
-//   todoName: { fontSize: 20, fontWeight: 'bold' },
-//   todoDescription: { marginBottom: 0 },
-//   button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
-// }
+const styles = {
+  container: { width: 800, margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 20},
+  todo: {  marginBottom: 15 },
+  input: { border: 'none', backgroundColor: '#ddd', marginBottom: 10, padding: 8, fontSize: 18 },
+  todoName: { fontSize: 20, fontWeight: 'bold' },
+  todoDescription: { marginBottom: 0 },
+  button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
+}
 
 export default App;
