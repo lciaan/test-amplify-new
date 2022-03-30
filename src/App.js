@@ -18,10 +18,10 @@ function App() {
   useEffect( () => {
     Amplify.configure({
       Auth: {
-        identityPoolId: 'eu-central-1:38767a04-2474-4f6e-97d5-47222579e071', //REQUIRED - Amazon Cognito Identity Pool ID
+        identityPoolId: 'eu-central-1:d726f2ae-a954-4a3e-a9c5-c82d4089da43', //REQUIRED - Amazon Cognito Identity Pool ID
         region: 'eu-central-1', // REQUIRED - Amazon Cognito Region
-        userPoolId: 'eu-central-1_xz7njhgNs', //OPTIONAL - Amazon Cognito User Pool ID
-        userPoolWebClientId: '4ih7b5nhlmupnblo61oee2gr32', 
+        userPoolId: 'eu-central-1_ZZjDRH57B', //OPTIONAL - Amazon Cognito User Pool ID
+        userPoolWebClientId: '7tfdaiv8vpnpgt58kbu2l0mr92', 
 
       },
       Storage:{
